@@ -1,6 +1,6 @@
 cask "optcg-sim" do
   version "1.23.0"
-  sha256 "acec7da657c0720252eda9f197e1d7e4b269aaf9fd40123828f813b4a0b92076"
+  sha256 "bbc91986c05583b3cbfa6e0e1b34882b87be7f06b4bd605299e9361b0b27e7ed"
 
   url "https://github.com/Twoody/homebrew-optcg-sim/raw/main/releases/v1.23.0/1.23a_Mac.zip"
   name "OPTCG Sim"
