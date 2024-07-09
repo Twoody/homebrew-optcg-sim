@@ -9,8 +9,14 @@ cask "optcg-sim" do
 
   app "OPTCGSim.app"
 
+  postflight do
+    system_command "xattr",
+                   args: ["-dr", "com.apple.quarantine", "#{appdir}/OPTCGSim.app"],
+                   sudo: true
+  end
+
   caveats <<~EOS
-    To run the application, you may need to set the following permissions:
+    To run the application, you may need to set the following permissions manually if the automatic setting does not work:
       xattr -dr com.apple.quarantine #{appdir}/OPTCGSim.app
   EOS
 end
