@@ -1,20 +1,17 @@
-class OPTCG_SIM < Formula
-  desc "Homebrew download manager for one piece trading card game simulator"
-  homepage "https://github.com/Twoody/homebrew-optcg-sim"
-  url "https://drive.google.com/file/d/1kPNpI6rZvoNwr-mjL3IHxFfNyaoDMoSX/view?usp=drive_link"
-  sha256 "acec7da657c0720252eda9f197e1d7e4b269aaf9fd40123828f813b4a0b92076"
+cask "optcg-sim" do
   version "1.23.0"
+  sha256 "acec7da657c0720252eda9f197e1d7e4b269aaf9fd40123828f813b4a0b92076"
 
-  def install
-    prefix.install "OPTCGSim.app"
-    bin.install_symlink "#{prefix}/OPTCGSim.app/Contents/MacOS/OPTCGSim" => "optcgsim"
-  end
+  url "https://github.com/Twoody/homebrew-optcg-sim/raw/main/releases/v1.23.0/1.23a_Mac.zip"
+  name "OPTCG Sim"
+  desc "One Piece Trading Card Game simulator"
+  homepage "https://github.com/Twoody/homebrew-optcg-sim"
 
-  def caveats
-    <<~EOS
-      To run the application, you may need to set the following permissions:
-        xattr -dr com.apple.quarantine #{prefix}OPTCGSim.app/
-    EOS
-  end
+  app "OPTCGSim.app"
+
+  caveats <<~EOS
+    To run the application, you may need to set the following permissions:
+      xattr -dr com.apple.quarantine #{appdir}/OPTCGSim.app
+  EOS
 end
 
